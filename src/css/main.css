@@ -1,0 +1,104 @@
+body {
+  background: url("/Users/admin/Desktop/Projects/PersonalProfile/ProfileSite/src/img/OfficeSky.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+header {
+  padding: 20px 15px;
+}
+
+
+#logo {
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  background-color: #30395c;
+  display: inline-block;
+}
+
+#top-nav {
+  float: right;
+  display: inline-block;
+}
+
+#top-nav a {
+  display: inline-block;
+  font-family: sans-serif;
+  color: white;
+  text-decoration: none;
+  padding: 10px 10px;
+}
+
+#top-nav a:hover {
+  color: #30395c;
+  text-decoration: none;
+  padding: 0px 15px/
+}
+.work {
+  padding: 60px 100px;
+  text-align: center;
+}
+.work .box {
+  display: inline-block;
+  background: #fff;
+  width: 50px;
+  height: 50px;
+  margin: 50px;
+
+}
+h1 {
+  color: red;
+  background-color: black;
+  margin-left: auto;
+}
+h3 {
+  font-size: 30px;
+  color: white;
+
+  margin-left: auto;
+}
+
+.box {
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: -10%;
+  color: white;
+  width: 450px;
+  text-align: center;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.box-img {
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.box li {
+  display: inline-block;
+  margin: 6px;
+  list-style: none;
+}
+
+.box li a {
+  color: white;
+  text-decoration: none;
+  font-size: 60px;
+  transition: all ease-in-out 250ms;
+}
+
+.box li a:hover {
+  color: #b9b9b9;
+}
+
+.footer2 {
+  display: inline-table;
+}

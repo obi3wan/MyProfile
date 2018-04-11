@@ -1,0 +1,596 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+<meta name="keywords" content="freedom, We the People, rights, blogs, article has summary of blogs from student of University of Phoenix ">
+<meta name="author" content="Ubonrath Phimvong">
+
+
+
+
+<script src="formsubmit.js"></script>
+
+<title>Blogs</title>
+<link href="Indexcss.css" rel="stylesheet" type="text/css"/>
+
+<script>
+
+// * this function will hide and show the content of the paragraph when the user moves the mouse over it and when the user moves the mouse away from it *// 
+//* Citation is from Don Gosselin, JavaScript 5th edition page 646 - 647 *// 
+
+function showInfo(heading) {
+	var curHeading = document.getElementById(heading);
+	if (curHeading.style.display == "block")
+			curHeading.style.display = "none";
+	else
+		curHeading.style.display = "block";
+	return false; 
+}
+
+
+// * this function will save the data that the user inputs into the text and later can be retrieved *// 
+function saveUserInfo()
+{
+    try{
+        // store the error messages.
+        var error = "";
+        //calculate 30 days in seconds for max-age of cookie
+        var maxAge = (60 * 60 * 24) * 30;
+        //Validate the first name, last name and email form input fields
+        // check for first name
+        if(document.getElementById("fname").value == "") {
+        error = error + "First Name is required.\n";
+        }
+        // check for last name
+        if(document.getElementById("lname").value == "") {
+        error = error + "Last Name is required.\n";
+        }
+        // check for email address
+        if(document.getElementById("email").value == "") {
+        error = error + "Email address is required.\n";
+        }
+        if(document.getElementById("dept").value == "") { // check for department
+        error = error + "Department is required.\n";
+        }
+            // validating the gender
+            if(document.getElementById("male").checked != true && 
+            document.getElementById("female").checked != true){
+                         error=error+"Gender is required.\n"
+                         }
+            // Validate the email address
+            if(document.getElementById("email").value != "") {
+                 // regular expression for email address
+                var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                var address = document.getElementById("email").value;
+                if(reg.test(address) == false) {
+                error = error + "Valid email address is required.\n";
+                 }
+             }
+        if(error == "") {
+        // save all the information in the cookie
+         document.cookie = "firstName=" + encodeURIComponent(document.getElementById("fname").value) + ";max-age=" + maxAge;
+         document.cookie = "lastName=" + encodeURIComponent(document.getElementById("lname").value) + ";max-age=" + maxAge;
+         document.cookie = "email=" + encodeURIComponent(document.getElementById("email").value) + ";max-age=" + maxAge;
+         document.cookie = "dept=" + encodeURIComponent(document.getElementById("dept").value) + ";max-age=" + maxAge;
+         document.cookie = "gender=" + encodeURIComponent((document.getElementById("male").checked) ? "Male" : "Female") + ";max-age=" + maxAge;
+        // Alert the successful message
+        alert("Information saved successfully in cookies");
+        }else {
+             alert(error);
+        }
+} catch(ex) {
+        // catch block catches the error if there is any javascript error
+alert("An error occurred!.\n" + "Error Name : " + ex.name + "\nError Message : " + ex.message);
+    }
+}
+</script>
+
+<style type="text/css">
+
+
+body {
+	background-color: #606060;
+	background-image: url(url);
+	padding-bottom: 0px;
+	bottom: -2%;
+	font-family: acme;
+	font-style: normal;
+	font-weight: 400;
+	text-align: left;
+}
+a:link {
+	color: #F8F8F8;
+}
+h2 {
+	font: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#h1heading {
+	
+	margin: 6px 350px 0px 60px;
+	text-align: left;
+}
+
+#content {
+	background-color: #F7040C;
+	margin: 10px 5px 10px 5px;
+	padding-top: 18px;
+	padding-right: 18px;
+	padding-left: 18px;
+	padding-bottom: 18px;
+	height: auto;
+	font: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
+	font-style: normal;
+	font-size: 20px;	
+}
+#article {
+	background-color: #F9F7F7;
+	padding: 10px;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+#banner {
+	margin-bottom: 1px;
+	padding-bottom: 0px;
+	margin-top: 27px;
+	margin-right: 27px;
+	border: thick solid #000000;
+	margin-left: 33px;
+	padding-left: 0px;
+	padding-right: 11px;
+	padding-top: 4px;
+	float: none;
+	clear: right;
+}
+#footerbar ul {
+	background-color: #150BFD;
+}
+
+body h1 strong {
+	color: #0B0B0B;
+	font-family: alex-brush;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 3em;
+	text-indent: 24px;
+	text-align: center;
+}
+#authorinfo {
+	margin-top: 120px;
+	text-align: center;
+	position: absolute;
+	font-family: alex-brush;
+	font-size: 24px;
+	background-color: #F9F9F9;
+	padding-left: 395px;
+	padding-right: 582px;
+	padding-top: 0px;
+	margin-bottom: -5px;
+	border: thin solid #F7040C;
+	color: #150BFD;
+	font-style: normal;
+	font-weight: 400;
+}
+
+
+
+#article {
+	padding-right: 0px;
+}
+#article {
+}
+#footerbar h2 {
+	text-decoration: underline;
+	color: #F8F8F8;
+	margin-bottom: 5px;
+	padding-bottom: 10px;
+	opacity: 1;
+}
+
+
+form {
+	margin-top: 1em;
+	border: solid 2px #000000;
+	padding: 1em;
+	font-size: 16px;
+	background-color: #C6C6C6;
+}
+
+#formcontainer {
+	width: 47%;
+	float: left;
+	margin-right: -1px;
+	background-color: #C0C0C0;
+}
+
+.labelfloatleft label {
+	width: 100px;
+	margin-right: 15px;
+	color: black;
+	float: left;
+	text-align: right;
+}
+.labelfloatleft input {
+	display: block;
+}
+.labelfloatright {
+	float: right;
+}
+
+fieldset {
+	argin-bottom: 1 em;
+	border: solid 2px #000000;
+	background-color: #606060;
+	display: inline;
+	margin-right: 81px;
+	padding-right: 146px;
+	padding-left: 36px;
+}
+legend {
+	color:#FBFBFB;
+	padding: 0 10px;
+}
+label {
+	color: black;
+}
+
+input.text {
+	background-color:#B8D2DF;
+}
+
+textarea {
+	border: solid 2px #305704;
+	display: block;
+}
+select {
+	display:block;
+}
+input.button {
+	color: #305704;
+	text-transform: uppercase;
+	font-weight: 400;
+	padding: 4px;
+	background-color: #ADDBF1;
+	border: 1px solid #305704;
+	display: inline;
+	border-radius: 26px;
+	font-family: aclonica;
+	font-style: normal;
+}
+#formacontainer2 {
+	width: 30%;
+	float: left;
+	margin: 20px 0px;
+	
+}
+.personalINFO {
+	display: list-item;
+	font-style: normal;
+	font-family: acme;
+	font-weight: 400;
+}
+</style>
+
+<style type="text/css">
+
+
+table {
+	height: 0px;
+<!-- Formatting the menu bar -->
+	width:250px;
+	background-color: #8E4905;
+	margin-top: -3px;
+	margin-right: -3px;
+	margin-bottom: -3px;
+	margin-left: -3px;
+	font-family: bangers;
+	font-style: normal;
+	font-weight: 400;
+	font-size: large;
+}
+td1 {
+	background-image: url(Images/strike3.jpg);
+}
+td:hover {
+	background-color:##C0C0C0;	<!-- Changing category bg color on hover -->
+}
+td a {
+	text-decoration: none;
+<!-- Changing link text to white, removing underline -->
+	color:#FFFFF9;
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+	text-align: left;
+	border-radius: 0px;
+	width: 101%;
+	clear: left;
+}
+.dropmenu {
+	visibility: hidden;
+<!-- Hiding the submenus -->
+	position:absolute;
+	width: 218px;
+	height: 34px;
+}
+ul li {
+	background-color:#606060;	<!-- Formatting the submenus -->
+	list-style:inside;
+}
+
+@media screen{
+}
+-->
+
+div.collapsed 
+{
+	display: none;
+	}
+
+</style>
+
+
+
+
+<script>var __adobewebfontsappname__="dreamweaver"</script>
+<script src="http://use.edgefonts.net/black-ops-one:n4:default;bangers:n4:default;alex-brush:n4:default;aclonica:n4:default;acme:n4:default;bubblegum-sans:n4:default.js" type="text/javascript"></script>
+
+
+
+</head>
+<body>
+
+<div id="mainwrapper">
+
+  <header>
+      <table cellpadding="3" cellspacing="0">
+    <tr>
+      <td onmouseover="document.getElementById('Home').style.visibility='visible'" onmouseout="document.getElementById('Home').style.visibility='hidden'"><a href="Index.html">Home</a>
+      <ul>
+          <li id="Home" class="dropmenu">
+            <ul>
+              <li><a href="Blogs.html">Blogs</a></li>
+              <li><a href="Contact_Me.html">Contact_Me</a></li>
+              
+            </ul>
+          </li>
+        </ul>
+      </td>
+      
+      <td onmouseover="document.getElementById('Blogs').style.visibility='visible'" onmouseout="document.getElementById('Blogs').style.visibility='hidden'"><a href="Blogs.html">Blogs</a>
+        <ul>        
+          <li id="Blogs" class="dropmenu">
+            <ul>
+              <li><a href="http://www.equalrightsamendment.org/overview.htm" title="Link">Amendent rights</a></li>
+          <li><a href="http://www.ohchr.org/EN/Issues/OlderPersons/Pages/OlderPersonsIndex.aspx" title="Link">Rights for Elders</a></li>
+          <li><a href="http://www.equalrightscenter.org/site/PageServer?pagename=issues_lgbt" title="Link">Rights for LGBT</a></li>
+          <li><a href="http://en.wikipedia.org/wiki/Minority_rights" title="Link">Rights for Minorities</a></li>
+          <li><a href="http://en.wikipedia.org/wiki/Women%27s_rights" title="Link">Rights for Women</a></li>
+          <li><a href="http://www.ada.gov/cguide.htm" title="Link">Rights for Disablilties</a></li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+      
+      <td onmouseover="document.getElementById('Contact_Me').style.visibility='visible'" onmouseout="document.getElementById('Contact_Me').style.visibility='hidden'"><a href="Contact_Me.html">Contact_Me</a>  
+        <ul>          
+          <li id="Contact_Me" class="dropmenu">
+            <ul>
+              <li><a href="Contact_Me.html">Email</a></li>
+              <li><a href="">Phone</a></li>
+              <li><a href="">Mailing Adress</a></li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+      
+      
+      
+      
+    </tr>
+  </table>
+<div id="logo">WHAT WE THE PEOPLE WANT</div>
+  </header>
+</div>
+<hr />
+<div id="h1heading">
+  <h1><strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Blogs</strong> </h1>
+</div><br>
+<div id="banner"><img src="Images/blog2.jpg" width="1260" height="325" alt=""/></div>
+<div id="content">
+  
+  <h2>Constitution</h2>
+   <p>
+  <a href="" onMouseOver="document.getElementById('Constitution rights').style.display='block';"
+  onMouseOut="document.getElementById('Constitution rights').style.display='none';">
+  Constitution Rights</a></p>
+  <div id="Constitution rights" class="collapsed">
+<p>The People's Campaign for the Constitution was launched in 2008 to support a transpartisan grassroots movement to take back our constitutional rights and restore our nation’s credibility as a leader of the free world.</p>
+<p>The first words of the Constitution  make it clear whom our government was established to serve: We the People. But under the guise of a "war on terror" that has spanned an entire decade and two administrations from both major parties, our government has committed mounting violations of constitutional rights and liberties. The rule of law has withered under warrantless surveillance, rampant racial and religious profiling, and torture—and even human experimentation—with impunity.</p></div>
+</div>
+
+
+  
+  <h2> Blogs </h2>
+  
+  <p>
+  <a href="" onMouseOver="document.getElementById('Human rights').style.display='block';"
+  onMouseOut="document.getElementById('Human rights').style.display='none';">
+  Human Rights</a></p>
+  <div id="Human rights" class="collapsed">
+  <p><em>In law, human rights is the idea that all people are entitled to have rights: </em><br>
+  All human beings are born free and equal in dignity and rights.
+  —Article 1 of the United Nations Universal Declaration of Human Rights (UDHR)[1]
+  Today, the principles are protected as legal rights in national and international law.[2] They are seen as universal, which means they are meant for everyone, no matter what their race, religion, ethnicity, nationality, age, sex (also women's rights), political beliefs (or any other kind of beliefs), intelligence, disability, sexual orientation, or gender identity are.<br>
+  <em> Every person has all of these rights, it is not possible to only grant some of them:</em><br>
+  All human rights are universal, indivisible and interdependent and related. The international community must treat human rights globally in a fair and equal manner, on the same footing, and with the same emphasis.
+  —Vienna Declaration and Programme of Action, World Conference on Human Rights, 1993
+  Because people believe that human rights are important, countries make laws to protect them. These laws say that governments cannot take away people's basic rights. They make sure people who take away other people's rights are punished.
+  
+  Some major political organizations have made statements that promote human rights. These are not laws, but they affect us anyway. If groups or countries do not follow these statements, others will condemn them (say that they are very bad); and then people may not talk with them, do business with them, or help them.
+  
+  
+  Declaration of the Rights of Man and of the Citizen approved by the National Assembly of France, August 26, 1789
+  Some of the important places that human rights laws are written is in constitutions. The United States Constitution and Constitution of France are two of the oldest set of laws based on human rights.
+  
+  In 1948 the United Nations made the Universal Declaration of Human Rights. <em>This is a widely respected document that says what the United Nations believes are human rights. It is not a law, but is the basis on which two important agreements are written:</em><br>
+</p></div>
+<ul><li>The International Covenant on Civil and Political Rights</li>
+<li>The International Covenant on Economic, Social and Cultural Rights</li>
+<li>These are United Nations human rights Covenants: agreements between people or countries. The countries who sign these two covenants agree to follow them.</li></ul>
+<br>
+<p>In addition to those Declaration and Covenants, there are many treaties and documents made by United Nations and other international organizations. Those treaties and documents are called "<strong>International human rights law" </strong>
+</p></div>
+<hr />
+<h1>BLOG LINK AND CONTACT INFO</h1>
+
+<p> Here is a link that will provide details on current subjects in today's society <a href="http://www.humanrightsfirst.org/uploads/pdfs/annualreport/HRF-2013-Annual-Report.pdf">Report</a><br>If you want to leave your ideas or input, please leave feed back at bottom of page and we can start discussions. 
+</p>
+
+
+<div id="formcontainer">
+
+<form name="frmInfo" id="frmInfo">
+<table border="1" cellpadding="2" cellspacing="2" background="Images/FreeSpeech.jpg">
+
+<tr>
+<td width="120">
+<b>First Name:</b>
+</td>
+<td>
+<input type="text" id="fname" name="fname" size=30>
+</td>
+</tr>
+
+<tr>
+<td width="120">
+<b>Last Name: </b>
+</td>
+<td>
+<input type="text" id="lname" name="lname" size=30>
+</td>
+</tr>
+
+<tr>
+<td width="120">
+<b>Address: </b>
+</td>
+<td>
+<input type="text" id="address" name="address" size=70>
+</td>
+<td>
+<select name="address" id="address"> 
+    <option value="AZ" >Arizona</option>
+<option value="IL"> Illinois</option>
+<option value="TN" selected = "selected">Tennessee</option>
+<option value="CA" > California </option>
+<option value="other">Other</option>
+</select>
+</td>
+<td>
+<select name="address" id="address"> 
+    <option>Choose a Country</option>
+<option>Argentina</option>
+<option>Australia</option>
+<option>Bolivia</option>
+<option>Brazil</option>
+<option>Canada</option>
+<option>France</option>
+<option>Japan</option>
+<option>Italy</option>
+<option>United States</option>
+<option>United Kingdom</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td width="120">
+<b>Email Address: </b>
+</td>
+
+<td>
+<input type="text" id="email" name="email" size=30>
+</td>
+</tr>
+
+<tr>
+<td width="120">
+<b>Department :</b>
+</td>
+<td>
+<select name="dept" id="dept"> 
+    <option value="">Select</option>
+    <option value="Administration">Administration</option>
+    <option value="Computer">Computer</option>
+    <option value="Networking">Networking</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td width="120">
+<b>Gender:</b>
+</td>
+
+<td>
+<input type="radio" id="male" name="gender" value="Male">Male</input>
+<input type="radio" id="female" name="gender" value="Female">Female</input>
+</td>
+</tr>
+
+<tr>
+<td colspan=2 align="center">
+<input type="button" name="save" value="Save Information" onclick="saveUserInfo ()" />
+</td>
+</tr>
+
+</table>
+<p><b>Click <a href="getUserInfo.html">here</a> to retrieve the information saved in the cookie </b></p>
+
+
+
+<br>
+<label for="message">Input Area</label>
+<textarea name="message" id="message" rows="10" cols="30" placeholder="your input"></textarea>
+</fieldset>
+
+<input type ="submit" class="button" formaction="formsubmit.js" value ="Send Information" />
+<input type="reset" value="Reset" class="button" />
+
+</form>
+
+
+
+ 
+
+</div>
+
+
+<hr>
+
+
+
+
+<div id="footerbar"><h2>Links to different blog sites</h2><ul>
+ 
+          <li><a href="http://www.equalrightsamendment.org/overview.htm" title="Link">Amendent rights</a></li>
+          <li><a href="http://www.ohchr.org/EN/Issues/OlderPersons/Pages/OlderPersonsIndex.aspx" title="Link">Rights for Elders</a></li>
+          <li><a href="http://www.equalrightscenter.org/site/PageServer?pagename=issues_lgbt" title="Link">Rights for LGBT</a></li>
+          <li><a href="http://en.wikipedia.org/wiki/Minority_rights" title="Link">Rights for Minorities</a></li>
+          <li><a href="http://en.wikipedia.org/wiki/Women%27s_rights" title="Link">Rights for Women</a></li>
+          <li><a href="http://www.ada.gov/cguide.htm" title="Link">Rights for Disablilties</a></li>
+        </ul></div><br><br>
+        
+        
+        <div id="authorinfo"><h4>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Author: Ubonrath Phimvong </h4></div>
+        
+        </body>
+
+
+
+</html>
